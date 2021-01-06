@@ -11,9 +11,20 @@ cd web-api
 npm start
 ```
 
-* Start web app
+Run web app
+---
+
+* Configure environment
 
 ```
 cd web-app
+cp -a .env.example .env
+```
+
+* Update configuration file to your local environment
+
+* Start application
+
+```
 npm start
 ```
