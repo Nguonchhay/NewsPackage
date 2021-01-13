@@ -22,7 +22,7 @@ const Header = props => {
                         <div className="text-center d-inline-block">
                             <a href="https://fb.com/fh5co" target="_blank" className="fh5co_display_table"><div className="fh5co_verticle_middle"><i className="fa fa-facebook"></i></div></a>
                         </div>
-                        <!--<div className="d-inline-block text-center"><img src="images/country.png" alt="img" className="fh5co_country_width"/></div>-->
+
                         <div className="d-inline-block text-center dd_position_relative ">
                             <select className="form-control fh5co_text_select_option">
                                 <option>English </option>

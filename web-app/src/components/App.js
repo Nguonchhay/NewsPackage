@@ -1,16 +1,21 @@
-import logo from './../assets/images/logo.svg';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+
+import Home from './../views/pages/Home';
 
 const App = () => {
-  const { REACT_APP_BASE_API } = process.env;
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Base API: { REACT_APP_BASE_API }</p>
-      </header>
-    </div>
-  );
+    <Router>
+      <Switch>
+        <Route path="/" component={Home} />
+      </Switch>
+    </Router>
+  )
 }
 
 export default App;
