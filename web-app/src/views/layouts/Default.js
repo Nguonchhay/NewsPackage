@@ -7,7 +7,7 @@ import FooterBottom from '../../components/shared/FooterBottom';
 import GoToTop from '../../components/shared/GoToTop';
 import Nav from '../../components/shared/Nav';
 
-const NewsLayout = props => {
+const DefaultLayout = props => {
     return (
         <Fragment>
             <HeaderTop />
@@ -23,4 +23,4 @@ const NewsLayout = props => {
     )
 }
 
-export default NewsLayout;
+export default DefaultLayout;

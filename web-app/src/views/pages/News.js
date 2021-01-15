@@ -1,15 +1,15 @@
-import HomeLayout from './../layouts/Home';
+import DefaultLayout from '../layouts/Default';
 
-const Home = props => {
+const News = props => {
     return (
-        <HomeLayout>
+        <DefaultLayout>
             <div className="container-fluid pt-3">
                 <div className="container animate-box" data-animate-effect="fadeIn">
-                    
+                    News list
                 </div>
             </div>
-        </HomeLayout>
+        </DefaultLayout>
     )
 }
 
-export default Home;
+export default News;

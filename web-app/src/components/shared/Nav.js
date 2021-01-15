@@ -1,4 +1,31 @@
+import React, { Fragment } from 'react';
+import { navs } from './../../utils/constant';
+
 const Nav = props => {
+
+    const renderNavs = () => (
+        navs.map(item => {
+            return <li key={item.key} className={`nav-item ${item.active ? ' active' : ''} ${item.children ? ' dropdown' : ''}`}>
+                {
+                    item.children ?
+                    <Fragment>
+                        <a className="nav-link dropdown-toggle" href="#" id={`dropdownMenu${item.key}`} data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">{item.name} <span className="sr-only">(current)</span></a>                        
+                        <div className="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
+                            {
+                                item.children.map(child => {
+                                    return <a className="dropdown-item" href={child.url}>{child.name}</a>
+                                })
+                            }
+                        </div>
+                    </Fragment>
+                    :
+                    <a className="nav-link" href={item.url}>{item.name} <span className="sr-only">(current)</span></a>
+                }
+            </li>
+        })  
+    );
+
     return (
         <div className="container-fluid bg-faded fh5co_padd_mediya padding_786">
             <div className="container padding_786">
@@ -9,36 +36,7 @@ const Nav = props => {
                     <a className="navbar-brand" href="#"><img src="images/logo.png" alt="img" className="mobile_logo_width"/></a>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
-                            <li className="nav-item active">
-                                <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a>
-                            </li>
-                            <li className="nav-item ">
-                                <a className="nav-link" href="blog.html">Blog <span className="sr-only">(current)</span></a>
-                            </li>
-                            <li className="nav-item ">
-                                <a className="nav-link" href="single.html">Single <span className="sr-only">(current)</span></a>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">World <span className="sr-only">(current)</span></a>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                                    <a className="dropdown-item" href="#">Action in</a>
-                                    <a className="dropdown-item" href="#">Another action</a>
-                                    <a className="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="dropdownMenuButton3" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Community<span className="sr-only">(current)</span></a>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                                    <a className="dropdown-item" href="#">Action in</a>
-                                    <a className="dropdown-item" href="#">Another action</a>
-                                    <a className="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </li>
-                            <li className="nav-item ">
-                                <a className="nav-link" href="Contact_us.html">Contact <span className="sr-only">(current)</span></a>
-                            </li>
+                            { renderNavs() }
                         </ul>
                     </div>
                 </nav>
